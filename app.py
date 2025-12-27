@@ -8,14 +8,14 @@ from scanner import run_scan
 from dotenv import load_dotenv
 import os
 
+from flask_cors import CORS
+
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.dirname(BASE_DIR)
 
 load_dotenv(os.path.join(PROJECT_ROOT, ".env"))
 
-from flask_cors import CORS
 
-CORS(app)
 
 
 # ===================== PATH CONFIG ===================== #
@@ -30,6 +30,17 @@ app = Flask(
     template_folder=os.path.join(PROJECT_ROOT, "templates")
 )
 
+
+CORS(
+    app,
+    resources={
+        r"/*": {
+            "origins": "*",
+            "methods": ["GET", "POST", "OPTIONS"],
+            "allow_headers": ["Content-Type"]
+        }
+    }
+)
 # ===================== LOAD NSE HOLIDAYS ===================== #
 
 HOLIDAYS_PATH = os.path.join(BASE_DIR, "holidays.json")
