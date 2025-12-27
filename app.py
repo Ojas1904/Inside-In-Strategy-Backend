@@ -15,20 +15,13 @@ PROJECT_ROOT = os.path.dirname(BASE_DIR)
 
 load_dotenv(os.path.join(PROJECT_ROOT, ".env"))
 
-
-
-
-# ===================== PATH CONFIG ===================== #
-
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-PROJECT_ROOT = os.path.dirname(BASE_DIR)
-
 # ===================== APP ===================== #
 
 app = Flask(
     __name__,
     template_folder=os.path.join(PROJECT_ROOT, "templates")
 )
+
 
 
 CORS(

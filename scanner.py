@@ -15,7 +15,7 @@ def log(msg, logs):
 import os
 
 API_KEY = os.getenv("API_KEY")
-ACCESS_TOKEN = os.getenv("BASE_URL")
+ACCESS_TOKEN = os.getenv("ACCESS_TOKEN")
 
 if not API_KEY:
     raise ValueError("API_KEY not found in environment variables")
