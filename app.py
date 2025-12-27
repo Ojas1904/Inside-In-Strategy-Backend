@@ -13,6 +13,10 @@ PROJECT_ROOT = os.path.dirname(BASE_DIR)
 
 load_dotenv(os.path.join(PROJECT_ROOT, ".env"))
 
+from flask_cors import CORS
+
+CORS(app)
+
 
 # ===================== PATH CONFIG ===================== #
 
